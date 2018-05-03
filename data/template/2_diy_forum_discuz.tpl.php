@@ -41,6 +41,23 @@ background-size: contain;
 <!--FORUM begain-->
 <div class="wp" style="margin-top:450px; margin-bottom:30px; width:100%; height:445px; background: #fff; padding:20px; box-sizing: border-box;">
 <div class="ltbanner">
+        <div class="stit">
+            <!--[diy=diy4]-->
+            <div id="diy4" class="area">
+                <div id="frameH7kxsX" class="frame move-span cl frame-1">
+                    <div id="frameH7kxsX_left" class="column frame-1-c">
+                        <div id="frameH7kxsX_left_temp" class="move-span temp"></div>
+                        <div id="portal_block_5" class="block move-span">
+                            <div id="portal_block_5_content" class="dxb_bc">
+                                <div class="portal_block_summary"><a class="stit_l" href="#"></a>
+                                    <a class="stit_r" href="#"></a></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--[/diy]-->
+        </div>
 <!--[diy=diy4]--><div id="diy4" class="area"></div><!--[/diy]-->
 </div>
 <div class="gj_rbox">
