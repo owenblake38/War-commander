@@ -1,6 +1,6 @@
 <?php if(!defined('IN_DISCUZ')) exit('Access Denied'); 
 0
-|| checktplrefresh('./template/yunzhan_saiche/common/header.htm', './template/yunzhan_saiche/common/header_common.htm', 1525328893, '2', './data/template/2_2_common_header_forum_forumdisplay.tpl.php', './template/yunzhan_saiche', 'common/header_forum_forumdisplay')
+|| checktplrefresh('./template/yunzhan_saiche/common/header.htm', './template/yunzhan_saiche/common/header_common.htm', 1525356964, '2', './data/template/2_2_common_header_forum_forumdisplay.tpl.php', './template/yunzhan_saiche', 'common/header_forum_forumdisplay')
 ;?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">

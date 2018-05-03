@@ -1,12 +1,12 @@
 <?php if(!defined('IN_DISCUZ')) exit('Access Denied'); hookscriptoutput('forumdisplay');
 0
-|| checktplrefresh('./template/yunzhan_saiche/forum/forumdisplay.htm', './template/default/forum/forumdisplay_leftside.htm', 1525328893, 'diy', './data/template/2_diy_forum_forumdisplay.tpl.php', './template/yunzhan_saiche', 'forum/forumdisplay')
-|| checktplrefresh('./template/yunzhan_saiche/forum/forumdisplay.htm', './template/default/forum/recommend.htm', 1525328893, 'diy', './data/template/2_diy_forum_forumdisplay.tpl.php', './template/yunzhan_saiche', 'forum/forumdisplay')
-|| checktplrefresh('./template/yunzhan_saiche/forum/forumdisplay.htm', './template/default/common/seccheck.htm', 1525328893, 'diy', './data/template/2_diy_forum_forumdisplay.tpl.php', './template/yunzhan_saiche', 'forum/forumdisplay')
-|| checktplrefresh('./template/yunzhan_saiche/forum/forumdisplay.htm', './template/yunzhan_saiche/forum/forumdisplay_list.htm', 1525328893, 'diy', './data/template/2_diy_forum_forumdisplay.tpl.php', './template/yunzhan_saiche', 'forum/forumdisplay')
-|| checktplrefresh('./template/yunzhan_saiche/forum/forumdisplay.htm', './template/default/forum/forumdisplay_sort.htm', 1525328893, 'diy', './data/template/2_diy_forum_forumdisplay.tpl.php', './template/yunzhan_saiche', 'forum/forumdisplay')
-|| checktplrefresh('./template/yunzhan_saiche/forum/forumdisplay.htm', './template/default/forum/search_sortoption.htm', 1525328893, 'diy', './data/template/2_diy_forum_forumdisplay.tpl.php', './template/yunzhan_saiche', 'forum/forumdisplay')
-|| checktplrefresh('./template/yunzhan_saiche/forum/forumdisplay.htm', './template/default/forum/search_sortoption.htm', 1525328893, 'diy', './data/template/2_diy_forum_forumdisplay.tpl.php', './template/yunzhan_saiche', 'forum/forumdisplay')
+|| checktplrefresh('./template/yunzhan_saiche/forum/forumdisplay.htm', './template/default/forum/forumdisplay_leftside.htm', 1525356964, 'diy', './data/template/2_diy_forum_forumdisplay.tpl.php', './template/yunzhan_saiche', 'forum/forumdisplay')
+|| checktplrefresh('./template/yunzhan_saiche/forum/forumdisplay.htm', './template/default/forum/recommend.htm', 1525356964, 'diy', './data/template/2_diy_forum_forumdisplay.tpl.php', './template/yunzhan_saiche', 'forum/forumdisplay')
+|| checktplrefresh('./template/yunzhan_saiche/forum/forumdisplay.htm', './template/default/common/seccheck.htm', 1525356964, 'diy', './data/template/2_diy_forum_forumdisplay.tpl.php', './template/yunzhan_saiche', 'forum/forumdisplay')
+|| checktplrefresh('./template/yunzhan_saiche/forum/forumdisplay.htm', './template/yunzhan_saiche/forum/forumdisplay_list.htm', 1525356964, 'diy', './data/template/2_diy_forum_forumdisplay.tpl.php', './template/yunzhan_saiche', 'forum/forumdisplay')
+|| checktplrefresh('./template/yunzhan_saiche/forum/forumdisplay.htm', './template/default/forum/forumdisplay_sort.htm', 1525356964, 'diy', './data/template/2_diy_forum_forumdisplay.tpl.php', './template/yunzhan_saiche', 'forum/forumdisplay')
+|| checktplrefresh('./template/yunzhan_saiche/forum/forumdisplay.htm', './template/default/forum/search_sortoption.htm', 1525356964, 'diy', './data/template/2_diy_forum_forumdisplay.tpl.php', './template/yunzhan_saiche', 'forum/forumdisplay')
+|| checktplrefresh('./template/yunzhan_saiche/forum/forumdisplay.htm', './template/default/forum/search_sortoption.htm', 1525356964, 'diy', './data/template/2_diy_forum_forumdisplay.tpl.php', './template/yunzhan_saiche', 'forum/forumdisplay')
 ;?><?php include template('common/header'); ?></div>
 <div id="pt" class="bm cl">
    <div class="wp">
