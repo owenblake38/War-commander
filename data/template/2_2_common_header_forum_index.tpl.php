@@ -1,6 +1,6 @@
 <?php if(!defined('IN_DISCUZ')) exit('Access Denied'); 
 0
-|| checktplrefresh('./template/yunzhan_saiche/common/header.htm', './template/yunzhan_saiche/common/header_common.htm', 1525273174, '2', './data/template/2_2_common_header_forum_index.tpl.php', './template/yunzhan_saiche', 'common/header_forum_index')
+|| checktplrefresh('./template/yunzhan_saiche/common/header.htm', './template/yunzhan_saiche/common/header_common.htm', 1525323766, '2', './data/template/2_2_common_header_forum_index.tpl.php', './template/yunzhan_saiche', 'common/header_forum_index')
 ;?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -91,18 +91,18 @@ EOF;
         <?php } ?>
       </span>
     </div>
-  
+
     <div class="newnav_box">
         <!--Start Navigation-->
         <?php $mnid = getcurrentnav();?>        <div id="yunzhan_menu_nav" class="yunzhan_m_n">
           <?php if(is_array($_G['setting']['navs'])) foreach($_G['setting']['navs'] as $nav) { ?>          <?php if($nav['available'] && (!$nav['level'] || ($nav['level'] == 1 && $_G['uid']) || ($nav['level'] == 2 && $_G['adminid'] > 0) || ($nav['level'] == 3 && $_G['adminid'] == 1))) { ?>
-          <li <?php if($mnid == $nav['navid']) { ?>class="active" <?php } ?><?php echo $nav['nav'];?>></li>
+          <li <?php echo $mnid;?> $$<?php echo $nav['navid'];?>$$ <?php if($mnid == $nav['navid']) { ?>class="active" <?php } ?><?php echo $nav['nav'];?>></li>
           <?php } ?>
           <?php } ?>
           <?php if(!empty($_G['setting']['pluginhooks']['global_nav_extra'])) echo $_G['setting']['pluginhooks']['global_nav_extra'];?>
         </div>
     </div>
-    
+
     <div class="newnav_right">
          <ul id="umnav_menu" class="p_pop nav_pop" style="display: none;">
       <li><a class="infos" href="home.php?mod=space&amp;uid=<?php echo $_G['uid'];?>" target="_blank" title="访问我的空间"><?php echo $_G['member']['username'];?></a></li>
@@ -159,7 +159,7 @@ EOF;
           <?php echo avatar($_G[uid],small);?>          </a> </li>
       </ul>
     </div>
-    
+
     <?php } elseif(!empty($_G['cookie']['loginuser'])) { ?>
     <div id="yunzhan_user">
       <ul id="yunzhan_nav">
@@ -171,7 +171,7 @@ EOF;
     <div class="yunzhan_login">
     <a href="plugin.php?id=wechat:login"><em class="i_wei"></em></a>
     <a href="connect.php?mod=login&amp;op=init&amp;referer=forum.php&amp;statfrom=login"><em class="i_qq"></em></a>
-    </div>	
+    </div>
     <div id="yunzhan_user">
       <ul id="yunzhan_nav">
         <li id="login_u_box"> <span><a href="javascript:;" onClick="javascript:lsSubmit();" class="nousername">登录</a></span> <span><a href="member.php?mod=register" class="btn-register">注册</a></span> </li>
@@ -187,9 +187,9 @@ EOF;
     </div>
     <?php } ?>
     </div>
-    
-    
-    
+
+
+
     <div class="cl"></div>
   </div>
   <!--End Navigation-->

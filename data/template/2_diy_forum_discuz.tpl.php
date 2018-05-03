@@ -23,7 +23,7 @@ background-size: contain;
             <a href="./" class="nvhm" title="首页"><?php echo $_G['setting']['bbname'];?></a><em>&raquo;</em><a href="forum.php"><?php echo $_G['setting']['navs']['2']['navname'];?></a><?php echo $navigation;?>
         </div>
         <div class="z"><?php if(!empty($_G['setting']['pluginhooks']['index_status_extra'])) echo $_G['setting']['pluginhooks']['index_status_extra'];?></div>
-    </div>    
+    </div>
 </div>
 
 
@@ -41,18 +41,62 @@ background-size: contain;
 <!--FORUM begain-->
 <div class="wp" style="margin-top:450px; margin-bottom:30px; width:100%; height:445px; background: #fff; padding:20px; box-sizing: border-box;">
 <div class="ltbanner">
-<!--[diy=diy4]--><div id="diy4" class="area"></div><!--[/diy]-->
+<!--[diy=diy4]--><div id="diy4" class="area">
+
+        <script src="/template/yunzhan_saiche/style/lun/myfocus-2.js" type="text/javascript"></script><!--引入myFocus库-->
+        <script src="/template/yunzhan_saiche/style/lun/mF_fancy.js" type="text/javascript"></script><!--引入风格js文件-->
+        <link href="/template/yunzhan_saiche/style/lun/mf-pattern/mF_fancy.css" type="text/css" /><!--引入风格css文件-->
+
+        <div id="boxID"><!--焦点图盒子-->
+            <div class="loading"><img src="img/loading.gif" alt="请稍候..." /></div><!--载入画面(可删除)-->
+            <div class="pic"><!--内容列表(li数目可随意增减)-->
+                <ul>
+                    <li><a href="#"><img style="width:760px; height:405px;" src="/template/yunzhan_saiche/style/lun/1.jpg" thumb="" alt="标题1" text="详细描述1" /></a></li>
+                    <li><a href="#"><img style="width:760px; height:405px;" src="/template/yunzhan_saiche/style/lun/2.jpg" thumb="" alt="标题2" text="详细描述2" /></a></li>
+                    <li><a href="#"><img style="width:760px; height:405px;" src="/template/yunzhan_saiche/style/lun/3.jpg" thumb="" alt="标题3" text="详细描述3" /></a></li>
+                    <li><a href="#"><img style="width:760px; height:405px;" src="/template/yunzhan_saiche/style/lun/4m.jpg" thumb="" alt="标题4" text="详细描述4" /></a></li>
+                    <li><a href="#"><img style="width:760px; height:405px;" src="/template/yunzhan_saiche/style/lun/5m.jpg" thumb="" alt="标题5" text="详细描述5" /></a></li>
+                </ul>
+            </div>
+        </div>
+
+        <script type="text/javascript">
+            myFocus.set({
+                id:'boxID',//焦点图盒子ID
+
+                pattern:'mF_fancy',//风格应用的名称
+
+                time:3,//切换时间间隔(秒)
+
+                trigger:'click',//触发切换模式:'click'(点击)/'mouseover'(悬停)
+
+                width:760,//设置图片区域宽度(像素)
+
+                height:405,//设置图片区域高度(像素)
+
+                txtHeight:'default'//文字层高度设置(像素),'default'为默认高度，0为隐藏
+            });
+        </script>
+
+    </div><!--[/diy]-->
 </div>
 <div class="gj_rbox">
-<ul>
-<!--[diy=diy5]--><div id="diy5" class="area"></div><!--[/diy]-->
-</ul>
+        <div class="subjectbox">
+            <h4><span class="tit_subject"></span>最新主题</h4>
+            <ul class="">
+                <?php if(is_array($grids['newthread'])) foreach($grids['newthread'] as $thread) { ?>                <?php if(!$thread['forumstick'] && $thread['closed'] > 1 && ($thread['isgroup'] == 1 || $thread['fid'] != $_G['fid'])) { ?>
+                <?php $thread[tid]=$thread[closed];?>                <?php } ?>
+                <li><a href="forum.php?mod=viewthread&amp;tid=<?php echo $thread['tid'];?>&amp;extra=<?php echo $extra;?>"<?php if($thread['highlight']) { ?> <?php echo $thread['highlight'];?><?php } if($_G['setting']['grid']['showtips']) { ?> tip="标题: <strong><?php echo $thread['oldsubject'];?></strong><br/>作者: <?php echo $thread['author'];?> (<?php echo $thread['dateline'];?>)<br/>查看/回复: <?php echo $thread['views'];?>/<?php echo $thread['replies'];?>" onmouseover="showTip(this)"<?php } else { ?> title="<?php echo $thread['oldsubject'];?>"<?php } if($_G['setting']['grid']['targetblank']) { ?> target="_blank"<?php } ?>><?php echo $thread['subject'];?></a></li>
+                <?php } ?>
+            </ul>
+        </div>
+
 </div>
 </div>
 <!--FORUMbegain end-->
 
 
-<div class="cl"></div>          
+<div class="cl"></div>
 <div id="ct" class="wp cl<?php if($_G['setting']['forumallowside']) { ?> ct2<?php } ?>" style="padding-top:10px; margin-bottom:20px;">
 <?php if(empty($gid)) { ?>
 <div id="chart" class="bm bw0 cl" style="padding:0 10px;">
@@ -96,16 +140,6 @@ slideImgTexts[<?php echo $k; ?>] = '<?php echo $svalue['subject'];?>';<?php $k++
 </div>
 </td>
 <?php } ?>
-<td valign="top" class="category_l2">
-<div class="subjectbox">
-<h4><span class="tit_subject"></span>最新主题</h4>
-        <ul class="category_newlist">
-        <?php if(is_array($grids['newthread'])) foreach($grids['newthread'] as $thread) { ?>        	<?php if(!$thread['forumstick'] && $thread['closed'] > 1 && ($thread['isgroup'] == 1 || $thread['fid'] != $_G['fid'])) { $thread[tid]=$thread[closed];?><?php } ?>
-<li><a href="forum.php?mod=viewthread&amp;tid=<?php echo $thread['tid'];?>&amp;extra=<?php echo $extra;?>"<?php if($thread['highlight']) { ?> <?php echo $thread['highlight'];?><?php } if($_G['setting']['grid']['showtips']) { ?> tip="标题: <strong><?php echo $thread['oldsubject'];?></strong><br/>作者: <?php echo $thread['author'];?> (<?php echo $thread['dateline'];?>)<br/>查看/回复: <?php echo $thread['views'];?>/<?php echo $thread['replies'];?>" onmouseover="showTip(this)"<?php } else { ?> title="<?php echo $thread['oldsubject'];?>"<?php } if($_G['setting']['grid']['targetblank']) { ?> target="_blank"<?php } ?>><?php echo $thread['subject'];?></a></li>
-<?php } ?>
-         </ul>
-         </div>
-</td>
 <td valign="top" class="category_l3">
 <div class="replaybox">
 <h4><span class="tit_replay"></span>最新回复</h4>

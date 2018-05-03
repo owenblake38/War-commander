@@ -24,7 +24,7 @@
             <a href="./" class="nvhm" title="{lang homepage}">$_G[setting][bbname]</a><em>&raquo;</em><a href="forum.php">{$_G[setting][navs][2][navname]}</a>$navigation
         </div>
         <div class="z"><!--{hook/index_status_extra}--></div>
-    </div>    
+    </div>
 </div>
 
 
@@ -44,18 +44,64 @@
 <!--FORUM begain-->
 <div class="wp" style="margin-top:450px; margin-bottom:30px; width:100%; height:445px; background: #fff; padding:20px; box-sizing: border-box;">
 	<div class="ltbanner">
-		<!--[diy=diy4]--><div id="diy4" class="area"></div><!--[/diy]-->
+		<!--[diy=diy4]--><div id="diy4" class="area">
+
+        <script type="text/javascript" src="/template/yunzhan_saiche/style/lun/myfocus-2.js"></script><!--引入myFocus库-->
+        <script type="text/javascript" src="/template/yunzhan_saiche/style/lun/mF_fancy.js"></script><!--引入风格js文件-->
+        <link href="/template/yunzhan_saiche/style/lun/mf-pattern/mF_fancy.css" type="text/css" /><!--引入风格css文件-->
+
+        <div id="boxID"><!--焦点图盒子-->
+            <div class="loading"><img src="img/loading.gif" alt="请稍候..." /></div><!--载入画面(可删除)-->
+            <div class="pic"><!--内容列表(li数目可随意增减)-->
+                <ul>
+                    <li><a href="#"><img style="width:760px; height:405px;" src="/template/yunzhan_saiche/style/lun/1.jpg" thumb="" alt="标题1" text="详细描述1" /></a></li>
+                    <li><a href="#"><img style="width:760px; height:405px;" src="/template/yunzhan_saiche/style/lun/2.jpg" thumb="" alt="标题2" text="详细描述2" /></a></li>
+                    <li><a href="#"><img style="width:760px; height:405px;" src="/template/yunzhan_saiche/style/lun/3.jpg" thumb="" alt="标题3" text="详细描述3" /></a></li>
+                    <li><a href="#"><img style="width:760px; height:405px;" src="/template/yunzhan_saiche/style/lun/4m.jpg" thumb="" alt="标题4" text="详细描述4" /></a></li>
+                    <li><a href="#"><img style="width:760px; height:405px;" src="/template/yunzhan_saiche/style/lun/5m.jpg" thumb="" alt="标题5" text="详细描述5" /></a></li>
+                </ul>
+            </div>
+        </div>
+
+        <script type="text/javascript">
+            myFocus.set({
+                id:'boxID',//焦点图盒子ID
+
+                pattern:'mF_fancy',//风格应用的名称
+
+                time:3,//切换时间间隔(秒)
+
+                trigger:'click',//触发切换模式:'click'(点击)/'mouseover'(悬停)
+
+                width:760,//设置图片区域宽度(像素)
+
+                height:405,//设置图片区域高度(像素)
+
+                txtHeight:'default'//文字层高度设置(像素),'default'为默认高度，0为隐藏
+            });
+        </script>
+
+    </div><!--[/diy]-->
 	</div>
 	<div class="gj_rbox">
-		<ul>
-			<!--[diy=diy5]--><div id="diy5" class="area"></div><!--[/diy]-->
-		</ul>
+        <div class="subjectbox">
+            <h4><span class="tit_subject"></span>{lang collection_lastthread}</h4>
+            <ul class="">
+                <!--{loop $grids['newthread'] $thread}-->
+                <!--{if !$thread['forumstick'] && $thread['closed'] > 1 && ($thread['isgroup'] == 1 || $thread['fid'] != $_G['fid'])}-->
+                <!--{eval $thread[tid]=$thread[closed];}-->
+                <!--{/if}-->
+                <li><a href="forum.php?mod=viewthread&tid=$thread[tid]&extra=$extra"{if $thread['highlight']} $thread['highlight']{/if}{if $_G['setting']['grid']['showtips']} tip="{lang title}: <strong>$thread[oldsubject]</strong><br/>{lang author}: $thread[author] ($thread[dateline])<br/>{lang show}/{lang reply}: $thread[views]/$thread[replies]" onmouseover="showTip(this)"{else} title="$thread[oldsubject]"{/if}{if $_G['setting']['grid']['targetblank']} target="_blank"{/if}>$thread[subject]</a></li>
+                <!--{/loop}-->
+            </ul>
+        </div>
+
 	</div>
 </div>
 <!--FORUMbegain end-->
 
 
-<div class="cl"></div>          
+<div class="cl"></div>
 <div id="ct" class="wp cl{if $_G['setting']['forumallowside']} ct2{/if}" style="padding-top:10px; margin-bottom:20px;">
 	<!--{if empty($gid)}-->
 		<div id="chart" class="bm bw0 cl" style="padding:0 10px;">
@@ -104,19 +150,6 @@
 							</div>
 						</td>
 					<!--{/if}-->
-					<td valign="top" class="category_l2">
-						<div class="subjectbox">
-							<h4><span class="tit_subject"></span>{lang collection_lastthread}</h4>
-					        <ul class="category_newlist">
-					        	<!--{loop $grids['newthread'] $thread}-->
-					        	<!--{if !$thread['forumstick'] && $thread['closed'] > 1 && ($thread['isgroup'] == 1 || $thread['fid'] != $_G['fid'])}-->
-									<!--{eval $thread[tid]=$thread[closed];}-->
-								<!--{/if}-->
-								<li><a href="forum.php?mod=viewthread&tid=$thread[tid]&extra=$extra"{if $thread['highlight']} $thread['highlight']{/if}{if $_G['setting']['grid']['showtips']} tip="{lang title}: <strong>$thread[oldsubject]</strong><br/>{lang author}: $thread[author] ($thread[dateline])<br/>{lang show}/{lang reply}: $thread[views]/$thread[replies]" onmouseover="showTip(this)"{else} title="$thread[oldsubject]"{/if}{if $_G['setting']['grid']['targetblank']} target="_blank"{/if}>$thread[subject]</a></li>
-								<!--{/loop}-->
-					         </ul>
-				         </div>
-					</td>
 					<td valign="top" class="category_l3">
 						<div class="replaybox">
 							<h4><span class="tit_replay"></span>{lang show_newthreads}</h4>
@@ -617,7 +650,7 @@
 
 <script type="text/javascript">
 		jQuery(".m-slide").slide({ titCell:".tab li", mainCell:".img",effect:"fold", autoPlay:true});
-		
+
 		jQuery(".focusBox").slide({ titCell:".num li", mainCell:".pic",effect:"fold", autoPlay:true,trigger:"click",
 			//下面startFun代码用于控制文字上下切换
 			startFun:function(i){
@@ -625,5 +658,5 @@
 			}
 		});
 </script>
-	
+
 <!--{template common/footer}-->

@@ -73,20 +73,20 @@ $diynav
         <!--{/if}-->
       </span>
     </div>
-  
+
     <div class="newnav_box">
         <!--Start Navigation-->
         <!--{eval $mnid = getcurrentnav();}-->
         <div id="yunzhan_menu_nav" class="yunzhan_m_n">
-          <!--{loop $_G['setting']['navs'] $nav}-->
-          <!--{if $nav['available'] && (!$nav['level'] || ($nav['level'] == 1 && $_G['uid']) || ($nav['level'] == 2 && $_G['adminid'] > 0) || ($nav['level'] == 3 && $_G['adminid'] == 1))}-->
-          <li {if $mnid == $nav[navid]}class="active" {/if}$nav[nav]></li>
-          <!--{/if}-->
-          <!--{/loop}-->
-          <!--{hook/global_nav_extra}-->
+          {loop $_G['setting']['navs'] $nav}
+          {if $nav['available'] && (!$nav['level'] || ($nav['level'] == 1 && $_G['uid']) || ($nav['level'] == 2 && $_G['adminid'] > 0) || ($nav['level'] == 3 && $_G['adminid'] == 1))}
+          <li {$mnid} $${$nav[navid]}$$ {if $mnid == $nav[navid]}class="active" {/if}$nav[nav]></li>
+          {/if}
+          {/loop}
+          {hook/global_nav_extra}
         </div>
     </div>
-    
+
     <div class="newnav_right">
          <ul id="umnav_menu" class="p_pop nav_pop" style="display: none;">
       <li><a class="infos" href="home.php?mod=space&uid=$_G[uid]" target="_blank" title="{lang visit_my_space}">{$_G[member][username]}</a></li>
@@ -146,7 +146,7 @@ $diynav
           </a> </li>
       </ul>
     </div>
-    
+
     <!--{elseif !empty($_G['cookie']['loginuser'])}-->
     <div id="yunzhan_user">
       <ul id="yunzhan_nav">
@@ -159,7 +159,7 @@ $diynav
     <div class="yunzhan_login">
     <a href="plugin.php?id=wechat:login"><em class="i_wei"></em></a>
     <a href="connect.php?mod=login&amp;op=init&amp;referer=forum.php&amp;statfrom=login"><em class="i_qq"></em></a>
-    </div>	
+    </div>
     <div id="yunzhan_user">
       <ul id="yunzhan_nav">
         <li id="login_u_box"> <span><a href="javascript:;" onClick="javascript:lsSubmit();" class="nousername">登录</a></span> <span><a href="member.php?mod=register" class="btn-register">注册</a></span> </li>
@@ -176,9 +176,9 @@ $diynav
     </div>
     <!--{/if}-->
     </div>
-    
-    
-    
+
+
+
     <div class="cl"></div>
   </div>
   <!--End Navigation-->
